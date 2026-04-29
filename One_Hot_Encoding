@@ -1,0 +1,16 @@
+sentence = "generative ai creates text images and code"
+words = sentence.split()
+vocab = list(set(words))
+word_to_index = {word: i for i, word in enumerate(vocab)}
+one_hot_matrix = []
+
+for word in words:
+    vector = [0] * len(vocab)
+    index = word_to_index[word]
+    vector[index] = 1         
+    one_hot_matrix.append(vector)
+print("Vocabulary:")
+print(vocab)
+print("\nOne-Hot Encoded Matrix:")
+for row in one_hot_matrix:
+    print(row)
