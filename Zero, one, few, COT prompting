@@ -1,0 +1,108 @@
+🧩 Problem
+
+A shopkeeper has 24 apples. He sells 8 in the morning and 5 in the evening. How many are left?
+
+Correct answer: 11 apples
+
+🥇 1. Zero-shot prompting
+
+(No examples, just ask directly)
+
+Prompt style:
+
+“Solve: A shopkeeper has 24 apples. He sold 8 in the morning and 5 in the evening. How many are left?”
+
+How it works:
+The model jumps straight in like a student seeing a question on an exam.
+
+Typical reasoning (implicit):
+24 − 8 − 5 = 11
+
+🔍 Analysis
+Clarity: Medium
+The answer appears, but reasoning may be hidden or minimal.
+Risk: Medium
+If the problem is tricky or ambiguous, mistakes can sneak in.
+Reliability: Medium
+Works fine for simple math, shaky for complex logic.
+
+👉 Think of it like asking someone for a quick answer in a hallway.
+
+🥈 2. One-shot prompting
+
+(Give one example first)
+
+Prompt style:
+
+Example:
+A person has 10 oranges, eats 3 → 7 left
+
+Now solve:
+A shopkeeper has 24 apples...
+
+How it works:
+You give the model a “pattern to imitate.”
+
+Typical reasoning:
+
+Start with total
+Subtract what’s used
+Output remaining
+
+24 − 8 − 5 = 11
+
+🔍 Analysis
+Clarity: Medium–High
+The example guides structure.
+Risk: Lower than zero-shot
+Less chance of misunderstanding format.
+Reliability: Better
+Especially useful when problems follow a pattern.
+
+👉 Like showing a solved problem before giving homework.
+
+🥉 3. Few-shot prompting
+
+(Multiple examples)
+
+Prompt style:
+
+Example 1: 10 − 2 − 3 = 5
+Example 2: 20 − 4 − 6 = 10
+
+Now solve: 24 − 8 − 5 = ?
+
+How it works:
+The model builds a stronger “mental groove” from repetition.
+
+🔍 Analysis
+Clarity: High
+Pattern becomes crystal clear.
+Risk: Low
+Harder to misinterpret the task.
+Reliability: High
+Very consistent for structured problems.
+
+👉 Like practicing several sums before the test.
+
+🧠 4. Chain-of-Thought (CoT) prompting
+
+(Explicit step-by-step reasoning)
+
+Prompt style:
+
+“Solve step by step.”
+
+Typical reasoning:
+
+Start with 24 apples
+Sold 8 → 24 − 8 = 16
+Sold 5 → 16 − 5 = 11
+Final answer: 11 apples
+🔍 Analysis
+Clarity: Very High
+Every step is visible.
+Risk: Low (but not zero)
+If a step is wrong, it’s at least traceable.
+Reliability: Very High
+Especially powerful for multi-step problems.
